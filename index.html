@@ -50,7 +50,7 @@
   /* ── Preloader ── */
   #preloader {
     position: fixed; inset: 0; z-index: 1000;
-    background: var(--dark);
+    background: #ffffff;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     gap: 24px;
@@ -58,7 +58,7 @@
   #preloader-logo {
     font-family: var(--font-script);
     font-size: clamp(2.5rem, 8vw, 5rem);
-    color: var(--gold-pale);
+    color: var(--dark);
     opacity: 0;
     letter-spacing: 0.02em;
   }
@@ -72,7 +72,7 @@
   }
   #preloader-bar-wrap {
     width: 180px; height: 1px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.1);
     position: relative; overflow: hidden;
   }
   #preloader-bar {
@@ -1603,6 +1603,51 @@
   }
 </style>
 </head>
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var brand = params.get('brand');
+  if (!brand) { window.location.replace('https://www.google.com'); return; }
+  brand = decodeURIComponent(brand);
+  // Replace all {{BRAND_NAME}} text nodes and attributes
+  document.addEventListener('DOMContentLoaded', function() {
+    function replaceInNode(node) {
+      if (node.nodeType === 3) {
+        node.textContent = node.textContent.replace(/\{\{BRAND_NAME\}\}/g, brand);
+      } else if (node.nodeType === 1) {
+        ['title','alt','aria-label','placeholder','data-caption','content'].forEach(function(attr) {
+          if (node.hasAttribute(attr)) {
+            node.setAttribute(attr, node.getAttribute(attr).replace(/\{\{BRAND_NAME\}\}/g, brand));
+          }
+        });
+        node.childNodes.forEach(replaceInNode);
+      }
+    }
+    replaceInNode(document.body);
+    // Also update <title> and <meta description>
+    document.title = document.title.replace(/\{\{BRAND_NAME\}\}/g, brand);
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', metaDesc.getAttribute('content').replace(/\{\{BRAND_NAME\}\}/g, brand));
+  });
+  // Handle {{BRAND_HANDLE}} — just use brand as handle (lowercase, no spaces)
+  var handle = brand.toLowerCase().replace(/\s+/g, '_');
+  document.addEventListener('DOMContentLoaded', function() {
+    function replaceHandle(node) {
+      if (node.nodeType === 3) {
+        node.textContent = node.textContent.replace(/\{\{BRAND_HANDLE\}\}/g, handle);
+      } else if (node.nodeType === 1) {
+        ['href','src','data-src'].forEach(function(attr) {
+          if (node.hasAttribute(attr)) {
+            node.setAttribute(attr, node.getAttribute(attr).replace(/\{\{BRAND_HANDLE\}\}/g, handle));
+          }
+        });
+        node.childNodes.forEach(replaceHandle);
+      }
+    }
+    replaceHandle(document.body);
+  });
+})();
+</script>
 <body>
 <!-- Scroll Progress Bar -->
 <div id="scroll-progress"></div>
@@ -1651,7 +1696,7 @@
 <div class="hero-overlay"></div>
 <div class="hero-content">
 <span class="hero-eyebrow" id="h1">Kerala · India · Worldwide</span>
-<h1 class="hero-title" id="h2">{{BRAND_NAME}}</h1>
+<h1 class="hero-title" id="h2">White<br/><em>Weddings</em></h1>
 <p class="hero-tagline" id="h3">Timeless · Emotional · Cinematic</p>
 <a class="hero-cta" href="#portfolio" id="h4">
 <span>View Portfolio</span>
@@ -2126,21 +2171,21 @@
 <div class="instagram-header">
 <div>
 <h3>Follow Our Journey</h3>
-<p class="instagram-handle">@{{INSTAGRAM_HANDLE}}</p>
+<p class="instagram-handle">@{{BRAND_HANDLE}}</p>
 </div>
-<a class="instagram-link" href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">View on Instagram →</a>
+<a class="instagram-link" href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">View on Instagram →</a>
 </div>
 <div class="instagram-grid">
-<a class="insta-item reveal" href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">
+<a class="insta-item reveal" href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">
 <img alt="Instagram 1" loading="lazy" src="images/DVGXGVLEtwG_1.jpg"/>
 </a>
-<a class="insta-item reveal reveal-delay-1" href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">
+<a class="insta-item reveal reveal-delay-1" href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">
 <img alt="Instagram 2" loading="lazy" src="images/DVJDlrdklUb_1.jpg"/>
 </a>
-<a class="insta-item reveal reveal-delay-2" href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">
+<a class="insta-item reveal reveal-delay-2" href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">
 <img alt="Instagram 3" loading="lazy" src="images/DU8Igx-EjC5_1.jpg"/>
 </a>
-<a class="insta-item reveal reveal-delay-3" href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">
+<a class="insta-item reveal reveal-delay-3" href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">
 <img alt="Instagram 4" loading="lazy" src="images/DQl8SPUkltU_1.jpg"/>
 </a>
 </div>
@@ -2235,7 +2280,7 @@
 <span class="footer-brand">{{BRAND_NAME}}</span>
 <ul class="footer-links">
 <li><a href="#portfolio">Portfolio</a></li>
-<li><a href="https://www.instagram.com/{{INSTAGRAM_HANDLE}}" target="_blank">Instagram</a></li>
+<li><a href="https://www.instagram.com/{{BRAND_HANDLE}}" target="_blank">Instagram</a></li>
 <li><a href="#">Facebook</a></li>
 <li><a href="#">Pinterest</a></li>
 <li><a href="#contact">Contact</a></li>
