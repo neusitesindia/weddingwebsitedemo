@@ -4,22 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>White Weddings | Wedding Photography</title>
-<meta content="Capturing your most beautiful moments. Premium wedding photography by White Weddings." name="description"/>
-<script>
-  // ── Brand Injection (must run before DOM renders) ──
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    var brand = params.get('brand');
-    if (!brand || brand.trim() === '') {
-      window.location.replace('https://www.google.com');
-      document.documentElement.style.visibility = 'hidden';
-      return;
-    }
-    // Store brand for use after DOM loads
-    window.__BRAND__ = decodeURIComponent(brand.trim());
-  })();
-</script>
+<title>{{BRAND}} | Wedding Photography</title>
+<meta content="Capturing your most beautiful moments. Premium wedding photography by {{BRAND}}." name="description"/>
 <!-- Fonts: Cormorant Garamond (luxury serif) + DM Sans (clean sans) + Pinyon Script (signature) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -1622,7 +1608,7 @@
 <div id="scroll-progress"></div>
 <!-- Preloader -->
 <div id="preloader">
-<div id="preloader-logo">White Weddings</div>
+<div id="preloader-logo">{{BRAND}}</div>
 <div id="preloader-sub">Photography &amp; Film</div>
 <div id="preloader-bar-wrap" style="margin-top:20px;">
 <div id="preloader-bar"></div>
@@ -1630,7 +1616,7 @@
 </div>
 <!-- Navigation -->
 <nav id="navbar">
-<a class="nav-brand" href="#">White Weddings</a>
+<a class="nav-brand" href="#">{{BRAND}}</a>
 <ul class="nav-links">
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#gallery">Gallery</a></li>
@@ -1664,8 +1650,8 @@
 <img alt="Wedding" id="hero-bg" src="media/DAnkdvPTo74_3469902411174153976_1.jpg"/>
 <div class="hero-overlay"></div>
 <div class="hero-content">
-<span class="hero-eyebrow" id="h1">Kerala · India · Worldwide</span>
-<h1 class="hero-title" id="h2">White Weddings</h1>
+<span class="hero-eyebrow" id="h1">{{TAGLINE}}</span>
+<h1 class="hero-title" id="h2">{{BRAND}}</h1>
 <p class="hero-tagline" id="h3">Timeless · Emotional · Cinematic</p>
 <a class="hero-cta" href="#portfolio" id="h4">
 <span>View Portfolio</span>
@@ -1685,12 +1671,12 @@
 <div class="marquee-item">Pre-Wedding Shoots <span class="marquee-dot"></span></div>
 <div class="marquee-item">Cinematic Films <span class="marquee-dot"></span></div>
 <div class="marquee-item">Destination Weddings <span class="marquee-dot"></span></div>
-<div class="marquee-item">Kerala · India · Worldwide <span class="marquee-dot"></span></div>
+<div class="marquee-item">{{TAGLINE}} <span class="marquee-dot"></span></div>
 <div class="marquee-item">Wedding Photography <span class="marquee-dot"></span></div>
 <div class="marquee-item">Pre-Wedding Shoots <span class="marquee-dot"></span></div>
 <div class="marquee-item">Cinematic Films <span class="marquee-dot"></span></div>
 <div class="marquee-item">Destination Weddings <span class="marquee-dot"></span></div>
-<div class="marquee-item">Kerala · India · Worldwide <span class="marquee-dot"></span></div>
+<div class="marquee-item">{{TAGLINE}} <span class="marquee-dot"></span></div>
 </div>
 </div>
 <!-- Portfolio Swiper -->
@@ -1840,7 +1826,7 @@
 <div class="masonry-item tilt-card reveal reveal-delay-2 lb-trigger" data-caption="Details &amp; Decor · Kerala" data-src="images/DU8Igx-EjC5_1.jpg"><img alt="Gallery 3" loading="lazy" src="images/DU8Igx-EjC5_1.jpg"/></div>
 <div class="masonry-item tilt-card reveal lb-trigger" data-caption="Olivia &amp; Daniel · Maldives" data-src="images/DQl8SPUkltU_1.jpg"><img alt="Gallery 4" loading="lazy" src="images/DQl8SPUkltU_1.jpg"/></div>
 <div class="masonry-item tilt-card reveal reveal-delay-1 lb-trigger" data-caption="Rachel &amp; Tom · Bali" data-src="images/DVGXGVLEtwG_1.jpg"><img alt="Gallery 5" loading="lazy" src="images/DVGXGVLEtwG_1.jpg"/></div>
-<div class="masonry-item tilt-card reveal reveal-delay-2 lb-trigger" data-caption="White Weddings · Gallery" data-src="images/DPyZtAWkmWE_1.jpg"><img alt="Gallery 6" loading="lazy" src="images/DPyZtAWkmWE_1.jpg"/></div>
+<div class="masonry-item tilt-card reveal reveal-delay-2 lb-trigger" data-caption="{{BRAND}} · Gallery" data-src="images/DPyZtAWkmWE_1.jpg"><img alt="Gallery 6" loading="lazy" src="images/DPyZtAWkmWE_1.jpg"/></div>
 </div>
 <!-- Mobile Gallery Swiper (shown only on mobile via CSS) -->
 <div class="swiper gallery-mobile-swiper">
@@ -1860,7 +1846,7 @@
 <div class="swiper-slide lb-trigger" data-caption="Rachel &amp; Tom · Bali" data-src="images/DVGXGVLEtwG_1.jpg">
 <img alt="Gallery 5" loading="lazy" src="images/DVGXGVLEtwG_1.jpg"/>
 </div>
-<div class="swiper-slide lb-trigger" data-caption="White Weddings · Gallery" data-src="images/DPyZtAWkmWE_1.jpg">
+<div class="swiper-slide lb-trigger" data-caption="{{BRAND}} · Gallery" data-src="images/DPyZtAWkmWE_1.jpg">
 <img alt="Gallery 6" loading="lazy" src="images/DPyZtAWkmWE_1.jpg"/>
 </div>
 </div>
@@ -1969,9 +1955,9 @@
 <div class="about-text reveal reveal-delay-1">
 <span class="section-label">Behind the Lens</span>
 <h2 class="section-title" style="margin-bottom:24px;">Every Story <em>Deserves</em> to be Told</h2>
-<p>At White Weddings, we believe every love story is unique and deserves to be told with artistry and passion. We are a team of dedicated wedding photographers committed to capturing the authentic emotions, candid moments, and intricate details that make your special day unforgettable.</p>
+<p>At {{BRAND}}, we believe every love story is unique and deserves to be told with artistry and passion. We are a team of dedicated wedding photographers committed to capturing the authentic emotions, candid moments, and intricate details that make your special day unforgettable.</p>
 <p>With years of experience and a keen eye for beauty, we blend candid photojournalism with elegant portraiture to create a timeless collection of images you'll cherish forever.</p>
-<span class="about-signature">White Weddings</span>
+<span class="about-signature">{{BRAND}}</span>
 <div class="about-stats">
 <div>
 <div class="about-stat-num">350+</div>
@@ -2032,7 +2018,7 @@
 <div class="testimonial-carousel">
 <div class="t-slide active">
 <div class="testimonial-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-<p class="testimonial-text">"White Weddings made us feel so at ease. The photos are absolutely stunning and capture the raw emotion of the day perfectly. We couldn't be happier with our memories."</p>
+<p class="testimonial-text">"{{BRAND}} made us feel so at ease. The photos are absolutely stunning and capture the raw emotion of the day perfectly. We couldn't be happier with our memories."</p>
 <div class="testimonial-divider"></div>
 <div class="testimonial-author">Sophia &amp; William · Kerala</div>
 </div>
@@ -2203,11 +2189,11 @@
 <h3 class="contact-info-title">Let's talk</h3>
 <p class="contact-info-sub">Have a quick question? Reach out directly.</p>
 <div style="display:flex;flex-direction:column;gap:12px;">
-<a class="contact-btn whatsapp" href="https://wa.me/918547191863">
+<a class="contact-btn whatsapp" href="https://wa.me/{{WHATSAPP}}">
 <svg fill="currentColor" height="22" viewbox="0 0 24 24" width="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
             Chat on WhatsApp
           </a>
-<a class="contact-btn" href="tel:+918547191863">
+<a class="contact-btn" href="tel:+{{PHONE}}">
 <svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
             +91 85471 91863
           </a>
@@ -2224,7 +2210,7 @@
 </div>
 </section>
 <!-- Sticky WhatsApp -->
-<a aria-label="WhatsApp" href="https://wa.me/918547191863" id="wa-btn" target="_blank">
+<a aria-label="WhatsApp" href="https://wa.me/{{WHATSAPP}}" id="wa-btn" target="_blank">
 <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
 </a>
 <!-- Lightbox -->
@@ -2246,7 +2232,7 @@
 </div>
 <!-- Footer -->
 <footer>
-<span class="footer-brand">White Weddings</span>
+<span class="footer-brand">{{BRAND}}</span>
 <ul class="footer-links">
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="https://www.instagram.com/whiteweddings_photography" target="_blank">Instagram</a></li>
@@ -2254,7 +2240,7 @@
 <li><a href="#">Pinterest</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-<p class="footer-copy">© 2025 White Weddings. All rights reserved. Kerala, India.</p>
+<p class="footer-copy">© {{YEAR}} {{BRAND}}. All rights reserved. {{LOCATION}}.</p>
 </footer>
 <!-- Reel Video Modal -->
 <div aria-label="Video player" aria-modal="true" id="reel-modal" role="dialog">
@@ -2584,8 +2570,8 @@
     const date = document.getElementById('contact-date').value || 'TBD';
     const venue = document.getElementById('contact-venue').value || 'TBD';
     const message = document.getElementById('contact-message').value || '';
-    const text = `Hello White Weddings!%0A%0AI'm ${encodeURIComponent(name)} (${encodeURIComponent(email)}) and I'd like to inquire about photography services.%0A%0A📅 Date: ${date}%0A📍 Venue: ${encodeURIComponent(venue)}%0A%0A💬 ${encodeURIComponent(message)}`;
-    window.open(`https://wa.me/918547191863?text=${text}`, '_blank');
+    const text = `Hello {{BRAND}}!%0A%0AI'm ${encodeURIComponent(name)} (${encodeURIComponent(email)}) and I'd like to inquire about photography services.%0A%0A📅 Date: ${date}%0A📍 Venue: ${encodeURIComponent(venue)}%0A%0A💬 ${encodeURIComponent(message)}`;
+    window.open(`https://wa.me/{{WHATSAPP}}?text=${text}`, '_blank');
   });
 
   // ── Parallax hero (desktop only) — capped to prevent empty top ──
@@ -2851,42 +2837,5 @@
 })(); // close IIFE
 </script>
 
-<script>
-// ── Brand Name Replacer ──
-(function() {
-  var brand = window.__BRAND__;
-  if (!brand) return;
-  var PLACEHOLDER = 'White Weddings';
-
-  // Replace <title> and meta description
-  document.title = brand + ' | Wedding Photography';
-  var metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = metaDesc.content.replace(new RegExp(PLACEHOLDER, 'g'), brand);
-
-  // Replace all text nodes
-  function replaceTextNodes(node) {
-    if (node.nodeType === 3) {
-      if (node.nodeValue.includes(PLACEHOLDER)) {
-        node.nodeValue = node.nodeValue.replace(new RegExp(PLACEHOLDER, 'g'), brand);
-      }
-    } else {
-      for (var i = 0; i < node.childNodes.length; i++) {
-        replaceTextNodes(node.childNodes[i]);
-      }
-    }
-  }
-  replaceTextNodes(document.body);
-
-  // Replace in relevant attributes
-  document.querySelectorAll('[alt],[aria-label],[title],[placeholder]').forEach(function(el) {
-    ['alt','aria-label','title','placeholder'].forEach(function(attr) {
-      var val = el.getAttribute(attr);
-      if (val && val.includes(PLACEHOLDER)) {
-        el.setAttribute(attr, val.replace(new RegExp(PLACEHOLDER, 'g'), brand));
-      }
-    });
-  });
-})();
-</script>
 </body>
 </html>
